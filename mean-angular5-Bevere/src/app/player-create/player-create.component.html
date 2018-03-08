@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Add New Player</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="savePlayer()" #playerForm="ngForm">
+        <div class="form-group">
+          <label for="name">ID</label>
+          <input type="text" class="form-control" [(ngModel)]="player.id" name="isbn" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Naam</label>
+          <input type="text" class="form-control" [(ngModel)]="player.naam" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Goals</label>
+          <input type="text" class="form-control" [(ngModel)]="player.goals" name="author" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Assisten</label>
+          <input type="number" class="form-control" [(ngModel)]="player.assists" name="published_year" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Ingeschreven jaar</label>
+          <input type="text" class="form-control" [(ngModel)]="player.ingeschreven_jaar" name="publisher" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!playerForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

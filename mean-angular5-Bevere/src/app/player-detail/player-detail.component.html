@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>{{ player.title }}</h1>
+  <dl class="list">
+    <dt>ID</dt>
+    <dd>{{ player.id }}</dd>
+    <dt>Naam</dt>
+    <dd>{{ player.naam }}</dd>
+    <dt>Assisten</dt>
+    <dd>{{ player.assists }}</dd>
+    <dt>Ingeschreven jaar</dt>
+    <dd>{{ player.ingeschreven_jaar }}</dd>
+    <dt>Bijnaam</dt>
+    <dd>{{ player.bijnaam }}</dd>
+    <dt>Actief tot</dt>
+    <dd>{{ player.actief_tot }}</dd>
+  </dl>
+  <div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/player-edit', player._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deletePlayer(player._id)">DELETE</button>
+    <a [routerLink]="['/players']" class="btn btn-default">Back</a>
+  </div>
+</div>
+</div>

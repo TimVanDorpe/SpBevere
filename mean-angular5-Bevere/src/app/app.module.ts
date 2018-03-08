@@ -7,12 +7,30 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { PlayerCreateComponent } from './player-create/player-create.component';
+import { PlayerEditComponent } from './player-edit/player-edit.component';
 //default page set players
 const appRoutes: Routes = [
   {
     path: 'players',
     component: PlayerComponent,
     data: { title: 'Player List' }
+  },
+  {
+    path: 'player-detail/:id',
+    component: PlayerDetailComponent,
+    data: { title: 'Player Details' }
+  },
+   {
+    path: 'player-create',
+    component: PlayerCreateComponent,
+    data: { title: 'Create Player' }
+  },
+  {
+    path : 'player-edit',
+    component: PlayerEditComponent,
+    data: {title : 'Edit Player'}
   },
   { path: '',
     redirectTo: '/players',
@@ -23,7 +41,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent
+    PlayerComponent,
+    PlayerDetailComponent,
+    PlayerCreateComponent,
+    PlayerEditComponent
   ],
   imports: [
     BrowserModule,

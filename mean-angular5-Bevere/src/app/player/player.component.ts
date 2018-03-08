@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-player',
@@ -10,13 +11,13 @@ export class PlayerComponent implements OnInit {
   players : any;
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router , private http: HttpClient) { }
 
   ngOnInit() {
     //getting a list of player data from RESTful API
      this.http.get('/player').subscribe(data => {
      this.players = data;
   });
-  }
+}
 
 }
