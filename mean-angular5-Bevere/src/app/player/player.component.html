@@ -4,14 +4,16 @@
     <thead>
       <tr>
         <th>Naam</th>
-        <th>Bijnaam</th>
+        <th>Goals</th>
+        <th>Rating</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let player of players">
         <td>{{ player.naam }}</td>
-        <td>{{ player.bijnaam }}</td>
+        <td>{{ player.goals }}</td>
+        <td>{{ player.rating }}</td>
         <td><a [routerLink]="['/player-detail', player._id]" class="btn btn-success">Details</a>    
       </tr>
     </tbody>

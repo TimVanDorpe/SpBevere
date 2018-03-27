@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlayerEditComponent implements OnInit {
 
-  player = {};
+  player:any = {};
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
@@ -24,8 +24,8 @@ export class PlayerEditComponent implements OnInit {
     });
   }
 
-  updatePlayer(id, data) {
-    this.http.put('/player/'+id, data)
+  updatePlayer(id) {
+    this.http.put('/player/'+id, this.player)
       .subscribe(res => {
           let id = res['_id'];
           this.router.navigate(['/player-detail', id]);

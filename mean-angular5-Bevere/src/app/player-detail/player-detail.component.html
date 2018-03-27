@@ -5,6 +5,8 @@
     <dd>{{ player.id }}</dd>
     <dt>Naam</dt>
     <dd>{{ player.naam }}</dd>
+    <dt>Rating</dt>
+    <dd>{{ player.rating }}</dd>
     <dt>Assisten</dt>
     <dd>{{ player.assists }}</dd>
     <dt>Ingeschreven jaar</dt>
@@ -12,7 +14,7 @@
     <dt>Bijnaam</dt>
     <dd>{{ player.bijnaam }}</dd>
     <dt>Actief tot</dt>
-    <dd>{{ player.actief_tot }}</dd>
+    <dd>{{ player.actief_tot | date:'short' }}</dd>
   </dl>
   <div class="row">
   <div class="col-md-12">

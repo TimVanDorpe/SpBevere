@@ -4,6 +4,7 @@ var PlayerSchema = new mongoose.Schema({
   naam: String,
   goals: Number,
   assists: String,
+  rating : Number,
   ingeschreven_jaar: String,
   bijnaam: String,
   actief_tot: { type: Date, default: Date.now },
