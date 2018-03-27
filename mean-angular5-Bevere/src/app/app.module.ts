@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     data: { title: 'Create Player' }
   },
   {
-    path : 'player-edit',
+    path : 'player-edit/:id',
     component: PlayerEditComponent,
     data: {title : 'Edit Player'}
   },
