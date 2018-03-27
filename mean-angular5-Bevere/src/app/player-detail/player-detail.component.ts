@@ -31,5 +31,4 @@ export class PlayerDetailComponent implements OnInit {
       }
     );
 }
-
 }

@@ -10,6 +10,11 @@ import { PlayerComponent } from './player/player.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { PlayerCreateComponent } from './player-create/player-create.component';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+
 //default page set players
 const appRoutes: Routes = [
   {
@@ -35,7 +40,10 @@ const appRoutes: Routes = [
   { path: '',
     redirectTo: '/players',
     pathMatch: 'full'
-  }
+  },
+  { path: "register", component: RegisterComponent },
+  { path: "login", component: LoginComponent }
+  ,{ path: "home", component: HomeComponent }
 ];
 
 @NgModule({
@@ -44,7 +52,11 @@ const appRoutes: Routes = [
     PlayerComponent,
     PlayerDetailComponent,
     PlayerCreateComponent,
-    PlayerEditComponent
+    PlayerEditComponent,
+    NavBarComponent,
+    RegisterComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
