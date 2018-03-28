@@ -32,11 +32,19 @@ li a:hover {
      background: #333;
 }
 .banner{
+    width: 33%;
+    padding :15px 0px;
+    margin :0px;
+      
+}   
+.bannerult{
     width: 100%;
-    padding : 15px;
-    margin : 20px;
-   
-}
+    padding :15px 0px;
+    margin :0px;
+      
+}  
+
+
 .leftbar{
     background-color: lightblue;
     height : 1500px;
@@ -59,4 +67,8 @@ li a:hover {
     height : 175px;
     margin-left : 10%;
     margin-top : 25px;
+}
+.img{
+    padding :0px;
+    margin : 0px;
 }
