@@ -3,6 +3,7 @@
 <!--<img src="./assets/img/banner.jpg" alt="banner" class="banner img">-->
     <nav class="nav">  
   <ul class="navbar-nav ml-auto">    
+    
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
     </li>
@@ -12,11 +13,17 @@
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="active" routerLink="/wedstrijden">Wedstrijden</a>
     </li>
-    <li class="nav-item">
+    <li *ngIf="!auth.isLoggedIn()" class="nav-item">
       <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
     </li>
+     <li *ngIf="auth.isLoggedIn()" class="nav-item" >
+       <a  class="nav-link" routerLinkActive="active" routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
+    </li>    
     <li class="nav-item">
       <a class="nav-link " routerLinkActive="active" routerLink="/register">Register</a>
+    </li>
+    <li *ngIf="auth.isLoggedIn()" class="nav-item">
+      <a  class="nav-link " routerLinkActive="active" (click)="auth.logout()">Logout</a>
     </li>
   </ul>
 </nav>

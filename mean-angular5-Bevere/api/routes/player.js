@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var player = require('../models/player.js');
+var player = require('../../models/Player.js');
 
 /* GET ALL Players */
 router.get('/', function(req, res, next) {

@@ -30,7 +30,7 @@ export class PlayerEditComponent implements OnInit {
           let id = res['_id'];
           this.router.navigate(['/player-detail', id]);
         }, (err) => {
-          console.log(err);
+          console.log(err); 
         }
       );
   }
