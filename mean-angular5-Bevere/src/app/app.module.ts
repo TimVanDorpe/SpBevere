@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { AuthenticationService } from './authentication.service';
+
 //default page set players
 const appRoutes: Routes = [
   {
@@ -69,7 +71,7 @@ const appRoutes: Routes = [
     { enableTracing: true } // <-- debugging purposes only
   )
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
