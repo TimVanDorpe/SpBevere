@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//crypto (hash and salt)
+//crypto (hash and salt) combineren van passwoord met salt en vergelijken met hash , overeenkomst is juist pw --> crypto = deel van node
 var crypto = require('crypto');
 //JOT --> generate a JSOn webtoken for pw
 var jwt = require('jsonwebtoken');
@@ -29,7 +29,7 @@ userSchema.methods.setPassword = function(password){
 };
 /*Checking the password is a similar process, but we already have the salt from the Mongoose model. 
 This time we just want to encrypt the salt and the password and see if the output matches the stored hash.
-Add another new method to the users.js model file, called validPassword*/ 
+*/ 
 userSchema.methods.validPassword = function(password) {
   var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
   return this.hash === hash;

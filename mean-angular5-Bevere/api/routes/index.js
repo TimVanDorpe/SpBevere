@@ -6,12 +6,23 @@ var auth = jwt({
   userProperty: 'payload'
 });
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+var ctrlProfile = require('../controllers/profile');
+var ctrlAuth = require('../controllers/authentication');
 
+// profile
 router.get('/profile', auth, ctrlProfile.profileRead);
 
+// authentication
+router.post('/register', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);
 
 module.exports = router;
+
+
+//router.get('/profile', auth, ctrlProfile.profileRead);
+
+/* GET home page. 
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});*/
+

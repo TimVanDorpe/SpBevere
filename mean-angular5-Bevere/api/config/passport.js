@@ -1,7 +1,10 @@
+
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
-var User = mongoose.model('User');
+var User = require('../../models/User.js');
+
+
 /*
 For a local strategy, we essentially just need to write a Mongoose query on the User model. 
 This query should find a user with the email address specified, and then call the validPassword method to see if the hashes match.

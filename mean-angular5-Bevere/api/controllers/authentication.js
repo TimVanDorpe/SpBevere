@@ -1,6 +1,7 @@
+
 var passport = require('passport');
 var mongoose = require('mongoose');
-var User = mongoose.model('User');
+var User = require('../../models/User.js');
 
 /*
 take the data from the submitted form and create a new Mongoose model instance
@@ -9,6 +10,11 @@ save the instance as a record to the database
 generate a JWT
 send the JWT inside the JSON response.
 */
+var sendJSONresponse = function(res, status, content) {
+  res.status(status);
+  res.json(content);
+};
+
 module.exports.register = function(req, res) {
   var user = new User();
 

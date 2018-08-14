@@ -3,23 +3,23 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-//var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser');
 var passport = require('passport');
 var player = require('./api/routes/player');
 var app = express();
 var mongoose = require('mongoose');
 
-//var routesApi = require('./api/routes/index');
+var routesApi = require('./api/routes/index');
 
-require('./models/user');
-require('./api/config/passport');
+
+
 
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/mean-angular5', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
-
-
+require('./models/User')
+require('./api/config/passport');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(passport.initialize());
-//app.use('/api', routesApi);
+app.use('/api', routesApi);
 
 app.use('/players', express.static(path.join(__dirname, 'dist')));
 app.use('/player', player);
