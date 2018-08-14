@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { AuthenticationService } from './authentication.service';
+import {AuthGuardService} from './authguard.service';
 
 //default page set players
 const appRoutes: Routes = [
@@ -40,13 +41,15 @@ const appRoutes: Routes = [
     component: PlayerEditComponent,
     data: {title : 'Edit Player'}
   },
+  
   { path: '',
     redirectTo: '/players',
     pathMatch: 'full'
   },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent }
-  ,{ path: "home", component: HomeComponent }
+  ,{ path: "home", component: HomeComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
