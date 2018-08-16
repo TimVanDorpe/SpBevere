@@ -21,16 +21,20 @@ router.get('/:id', function(req, res, next) {
 
 /* SAVE Player */
 router.post('/', function(req, res, next) {
+  req.body.countRatings = 1;
   player.create(req.body, function (err, post) {
     if (err) return next(err);
-    res.json(post);
+        res.json(post);
   });
 });
 
 /* UPDATE Player */
-router.put('/:id', function(req, res, next) {
-  player.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+router.put('/:id', function(req, res, next) {    
+  player.findByIdAndUpdate(req.params.id, req.body,  function (err, post) {    
     if (err) return next(err);
+    //player.setCountRating(req.body.countRatings);
+    //player.setRating(req.body.rating);
+    
     res.json(post);
   });
 });

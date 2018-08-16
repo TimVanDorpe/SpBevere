@@ -10,12 +10,12 @@ var app = express();
 var mongoose = require('mongoose');
 
 var routesApi = require('./api/routes/index');
-
+//'mongodb://localhost/mean-angular5'
 
 
 
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/mean-angular5', { promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb://Admin:admin123@ds123372.mlab.com:23372/spartabevere', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 require('./models/User')

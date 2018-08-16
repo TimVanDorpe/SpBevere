@@ -1,18 +1,21 @@
 <div class="container">
   <h1>{{ player.title }}</h1>
   <dl class="list">
-    <dt>ID</dt>
+    <dt>Rugnummer</dt>
     <dd>{{ player.id }}</dd>
     <dt>Naam</dt>
     <dd>{{ player.naam }}</dd>
-    <dt>Rating</dt>
+    <dt>Bijnaam</dt>
+    <dd>{{ player.bijnaam }}</dd>
+    <dt>Gemiddelde rating</dt>    
     <dd>{{ player.rating }}</dd>
+    <dt>Aantal beoordelingen</dt>
+    <dd>{{ player.countRatings }}</dd>
     <dt>Assisten</dt>
     <dd>{{ player.assists }}</dd>
     <dt>Ingeschreven jaar</dt>
     <dd>{{ player.ingeschreven_jaar }}</dd>
-    <dt>Bijnaam</dt>
-    <dd>{{ player.bijnaam }}</dd>
+    
     <dt>Actief tot</dt>
     <dd>{{ player.actief_tot | date:'short' }}</dd>
   </dl>

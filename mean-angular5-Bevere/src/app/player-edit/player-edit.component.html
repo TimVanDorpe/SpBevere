@@ -2,11 +2,7 @@
   <h1>Edit Player</h1>
   <div class="row">
     <div class="col-md-6">
-      <form (ngSubmit)="updatePlayer(player._id)" #playerForm="ngForm">
-        <div class="form-group">
-          <label for="name">ID</label>
-          <input type="text" class="form-control" [(ngModel)]="player.id" name="id" required>
-        </div>
+      <form (ngSubmit)="updatePlayer(player._id)" #playerForm="ngForm">        
         <div class="form-group">
           <label for="name">Naam</label>
           <input type="text" class="form-control" [(ngModel)]="player.naam" name="naam" required>
@@ -18,17 +14,20 @@
         <div class="form-group">
           <label for="name">Assisten</label>
           <input type="number" class="form-control" [(ngModel)]="player.assists" name="assists" required>
+        </div>        
+        <div class="form-group">
+          <label for="name">Gemiddelde rating</label>
+         <form>
+            <input type="radio" [(ngModel)]="player.rating" name="rating" value=1> 1
+            <input type="radio" [(ngModel)]="player.rating" name="rating" value=2> 2
+             <input type="radio" [(ngModel)]="player.rating" name="rating" value=3> 3
+              <input type="radio" [(ngModel)]="player.rating" name="rating" value=4> 4
+              <input type="radio" [(ngModel)]="player.rating" name="rating" value=5> 5        
+         </form>
         </div>
         <div class="form-group">
-          <label for="name">Ingeschreven jaar</label>
-          <input type="text" class="form-control" [(ngModel)]="player.ingeschreven_jaar" name="ingeschreven_jaar" required>
-        </div>
-        <div class="form-group">
-          <label for="name">Rating</label>
-          <input type="text" class="form-control" [(ngModel)]="player.rating" name="rating" required>
-        </div>
-        <div class="form-group">
-          <label for="name">Bijnaam</label>
+
+          <label for="name" >Bijnaam</label>
           <input type="text" class="form-control" [(ngModel)]="player.bijnaam" name="bijnaam" required>
         </div>
         <div class="form-group">

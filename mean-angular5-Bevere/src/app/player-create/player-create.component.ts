@@ -15,9 +15,11 @@ export class PlayerCreateComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    
   }
 
   savePlayer() {
+    
     this.http.post('/player', this.player)
       .subscribe(res => {
           let id = res['_id'];
