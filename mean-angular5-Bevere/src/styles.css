@@ -28,7 +28,7 @@ li a:hover {
      padding : 20px;
      margin: 0px;
      margin-left: 0px;     
-     padding-left:0px;
+     padding-left: 8.333%;
      background: #333;
 }
 .banner{
@@ -46,18 +46,21 @@ li a:hover {
 
 
 .leftbar{
-    background-color: lightblue;
-    height : 1500px;
+    background-color: #A6C9DF;
+    
 }
 .rightbar{
-    background-color: lightblue;
-    height : 1500px;
+    background-color: #A6C9DF;
+    
 }
 .midbar{
+    margin-bottom : 0px;
+    padding-bottom: 0px;
     padding-left : 0px;
     margin-left: 0px;
     padding-right : 0px;
     margin-right: 0px;
+    background-color: #c8f4d3;  
 }
 .table{
     padding : 16px;
@@ -68,7 +71,38 @@ li a:hover {
     margin-left : 10%;
     margin-top : 25px;
 }
+.logoHome{
+    width: 175px;
+    height : 175px;
+    margin-left : 38%;
+    margin-top : 50px;
+}
 .img{
     padding :0px;
     margin : 0px;
+}
+.footer{
+    margin : 0px;
+    width : 100%;
+    text-align: center;
+    background-color: white;
+}
+.groepsfoto{
+    width: 100%;
+    height: 50%;
+    margin: 50px;
+    
+}
+.containercontext{
+    background-color: #c8f4d3;
+    padding : 25px;
+
+}
+.rightfloat{
+    float: right;
+}
+.div0 {
+    padding : 0px;
+    margin: 0px;
+    
 }

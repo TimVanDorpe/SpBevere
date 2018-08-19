@@ -18,6 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { AuthenticationService } from './authentication.service';
 import {AuthGuardService} from './authguard.service';
+import { FooterComponent } from './footer/footer.component';
+import { RateUserComponent } from './rate-user/rate-user.component';
 
 //default page set players
 const appRoutes: Routes = [
@@ -37,13 +39,18 @@ const appRoutes: Routes = [
     data: { title: 'Create Player' }
   },
   {
+    path : 'rate-user/:id',
+    component: RateUserComponent,
+    data: {title : 'Rate Player'}
+  },
+  {
     path : 'player-edit/:id',
     component: PlayerEditComponent,
     data: {title : 'Edit Player'}
   },
   
   { path: '',
-    redirectTo: '/players',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   { path: "register", component: RegisterComponent },
@@ -63,7 +70,9 @@ const appRoutes: Routes = [
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent,
+    RateUserComponent
   ],
   imports: [
     BrowserModule,

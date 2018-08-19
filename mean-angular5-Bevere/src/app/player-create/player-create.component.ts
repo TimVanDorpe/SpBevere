@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import {AuthenticationService} from '../authentication.service'
 
 @Component({
   selector: 'app-player-create',
@@ -12,7 +13,7 @@ export class PlayerCreateComponent implements OnInit {
 
   player = {};
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, public auth: AuthenticationService) { }
 
   ngOnInit() {
     

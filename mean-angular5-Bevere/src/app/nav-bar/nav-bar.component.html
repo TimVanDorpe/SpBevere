@@ -28,18 +28,20 @@
   </ul>
 </nav>
  -->
-<ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">  
   <li class="nav-item">
       <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="active" routerLink="/players">Spelers</a>
     </li>
-    <li class="nav-item">
+    <!--<li class="nav-item">
       <a class="nav-link" routerLinkActive="active" routerLink="/wedstrijden">Wedstrijden</a>
-    </li>
-  <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Sign in</a></li>
-    <li *ngIf="!auth.isLoggedIn()"><a routerLink="/register">Register</a></li>
-  <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
-  <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
+    </li>-->
+  
+  <li  *ngIf="!auth.isLoggedIn()"><a  class="nav-link" routerLink="/login">Sign in</a></li>
+    <li  *ngIf="!auth.isLoggedIn()"><a   class="nav-link" routerLink="/register">Register</a></li>
+  <li *ngIf="auth.isLoggedIn()"><a class="nav-link"  routerLink="/profile">{{ auth.getUserDetails()?.name }}</a></li>
+  <li *ngIf="auth.isLoggedIn()"><a  class="nav-link" (click)="auth.logout()">Logout</a></li>
+  
 </ul>

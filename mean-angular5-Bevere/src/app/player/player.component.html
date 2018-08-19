@@ -1,30 +1,34 @@
 <div class="container">  
   <h1>Player List</h1>
-  <table class="table">
+  <table class="table" style="width : 75%">
     <thead>
-      <tr>
-        <th width="15px">Rugnummer</th>
-        <th>Naam</th>
-        <th>Bijnaam</th>
-        <th>Assists</th>
-        <th>Goals</th>
-        <th width="15px">Gemiddelde rating</th>
-        <th>Action</th>
+      <tr>        
+        <th width="20%">Naam</th>
+        <th width="20%">Bijnaam</th>
+        <th width="10%">Assists</th>
+        <th width="10%">Goals</th>
+        <th width="10%">Rating</th>
+        <th class="rightfloat" width="20%">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let player of players">
-        <td>{{player.id}}</td>
-        <td>{{ player.naam }}</td>
-        <td>{{ player.bijnaam }}</td>
-        <td>{{ player.assists }}</td>
-        <td>{{ player.goals }}</td>
-        <td>{{ player.rating }}</td>
-        <td><a [routerLink]="['/player-detail', player._id]" class="btn btn-success">Details</a>    
+      <tr *ngFor="let player of players">        
+        <td >{{ player.naam }}</td>
+        <td >{{ player.bijnaam }}</td>
+        <td >{{ player.assists }}</td>
+        <td >{{ player.goals }}</td>
+        <td >{{ player.rating }}</td>
+        <td class="rightfloat">          
+            <a *ngIf="auth.isAdmin()" [routerLink]="['/player-detail', player._id]" class="btn btn-success">Details</a> 
+            <a  [routerLink]="['/rate-user', player._id]" class="btn btn-success">Rate</a> 
+          
       </tr>
     </tbody>
   </table>
-  <a [routerLink]="['/player-create']" class="btn btn-default btn-lg">
+   <a [routerLink]="['/player-create']" class="btn btn-default btn-lg ">
     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
   </a>
+
+  <!--*ngIf="auth.isAdmin()"-->
+  
 </div>

@@ -65,6 +65,16 @@ public isLoggedIn(): boolean {
     return false;
   }
 }
+public isAdmin(): boolean {
+  const user = this.getUserDetails();
+  if(user){
+    if (user._id == "5b753290c6c3ee349817e352") {
+      return true;
+    }else 
+      {return false;}
+  }else
+{return false;}
+}
 /*
 To facilitate making API calls, add the request method to the AuthenticationService, which is able to construct and return the proper HTTP request 
 observable depending on the specific type of request. It’s a private method, since it’s only used by this service, and exists just to reduce code duplication. 
