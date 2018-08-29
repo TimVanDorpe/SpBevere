@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import * as $ from 'jquery';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./rate-user.component.css'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class RateUserComponent implements OnInit {
 
   player:any = {};
@@ -19,7 +21,14 @@ export class RateUserComponent implements OnInit {
 
   ngOnInit() {
     this.getPlayer(this.route.snapshot.params['id']);
+    $('li').click(function(){
+      $('li').removeClass('active');
+      $('li').removeClass('sec-active');
+      $(this).addClass('active'); 
+      $(this).prevAll().addClass('sec-active');
+ })
   }
+  
 
   getPlayer(id) {
     this.http.get('/player/'+id).subscribe(data => {

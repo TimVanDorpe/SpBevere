@@ -1,3 +1,4 @@
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -20,6 +21,30 @@ li a {
 
 li a:hover {
     background-color: #111;
+}
+.stars ul{
+    background-color: #c8f4d3;
+}
+
+.stars ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    color : white;
+    text-shadow: 2px 2px 7px grey;
+    font-size: 25px !important;
+}
+.stars ul li:hover{
+    color:yellow;
+}
+.stars ul li.active, ul li.sec-active{
+    color : yellow;
+
+}
+.stars input[type="radio"]{
+    display: none;
+
+
 }
 .nav{
      background-color: #333;

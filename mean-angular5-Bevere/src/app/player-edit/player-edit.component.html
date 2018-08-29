@@ -2,27 +2,40 @@
   <h1>Edit Player</h1>
   <div class="row">
     <div class="col-md-6">
-      <form (ngSubmit)="updatePlayer(player._id)" #playerForm="ngForm">        
+      <form (ngSubmit)="updatePlayer(player._id)" #playerForm="ngForm">
+        
         <div class="form-group">
-          <label for="name">Naam</label>
+          <label for="name">Rugnummer</label>
+          <input type="text" class="form-control" [(ngModel)]="player.id" name="id" required>
+        </div>
+                
+        <div class="form-group">
+          <label for="name">Naam : </label>
           <input type="text" class="form-control" [(ngModel)]="player.naam" name="naam" required>
         </div>
         <div class="form-group">
-          <label for="name">Goals</label>
+        <label for="name" >Bijnaam : </label>
+          <input type="text" class="form-control" [(ngModel)]="player.bijnaam" name="bijnaam" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Goals : </label>
           <input type="text" class="form-control" [(ngModel)]="player.goals"  name="goals" required>
         </div>
         <div class="form-group">
-          <label for="name">Assisten</label>
+          <label for="name">Assisten : </label>
           <input type="number" class="form-control" [(ngModel)]="player.assists" name="assists" required>
         </div>        
         <div class="form-group">
-          <label for="name">Rating</label>
+          <label for="name">Rating : </label>
           <input type="number" class="form-control" [(ngModel)]="player.rating" name="rating" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Aantal ratings : </label>
+          <input type="text" class="form-control" [(ngModel)]="player.countRatings" name="naam" required>
         </div> 
         <div class="form-group">
-
-          <label for="name" >Bijnaam</label>
-          <input type="text" class="form-control" [(ngModel)]="player.bijnaam" name="bijnaam" required>
+          <label for="name" >Ingeschreven jaar : </label>
+          <input type="text" class="form-control" [(ngModel)]="player.ingeschreven_jaar" name="ingeschreven_jaar" required>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-success" [disabled]="!playerForm.form.valid">Update</button>

@@ -1,13 +1,13 @@
 <div class="container">  
   <h1>Player List</h1>
-  <table class="table" style="width : 75%">
+  <table id="myTable2" class="table" style="width : 75%">
     <thead>
       <tr>        
-        <th width="20%">Naam</th>
-        <th width="20%">Bijnaam</th>
-        <th width="10%">Assists</th>
-        <th width="10%">Goals</th>
-        <th width="10%">Rating</th>
+        <th onclick="sortTable(0)" width="20%">Naam</th>
+        <th onclick="sortTable(1)" width="20%">Bijnaam</th>
+        <th onclick="sortTable(2)" width="10%">Assists</th>
+        <th onclick="sortTable(3)" width="10%">Goals</th>
+        <th onclick="sortTable(4)" width="10%">Rating</th>
         <th class="rightfloat" width="20%">Action</th>
       </tr>
     </thead>
@@ -25,7 +25,7 @@
       </tr>
     </tbody>
   </table>
-   <a [routerLink]="['/player-create']" class="btn btn-default btn-lg ">
+   <a *ngIf="auth.isAdmin()" [routerLink]="['/player-create']" class="btn btn-default btn-lg ">
     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
   </a>
 

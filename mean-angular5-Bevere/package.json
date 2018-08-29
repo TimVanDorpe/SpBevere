@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",    
+    "ng": "ng",
     "start": "ng build && node ./bin/www",
     "build": "ng build",
     "test": "ng test",
@@ -28,6 +28,7 @@
     "express": "^4.16.2",
     "express-jwt": "^5.3.1",
     "forever-monitor": "^1.7.1",
+    "jquery": "^3.3.1",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.0.9",
     "morgan": "^1.9.0",
