@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import * as $ from 'jquery';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {AuthenticationService} from '../authentication.service'
@@ -16,7 +17,12 @@ export class PlayerCreateComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, public auth: AuthenticationService) { }
 
   ngOnInit() {
-    
+    $('li').click(function(){
+      $('li').removeClass('active');
+      $('li').removeClass('sec-active');
+      $(this).addClass('active'); 
+      $(this).prevAll().addClass('sec-active');
+ })
   }
 
   savePlayer() {

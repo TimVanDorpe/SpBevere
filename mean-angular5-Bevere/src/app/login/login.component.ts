@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService, TokenPayload } from '../authentication.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   templateUrl: './login.component.html'
@@ -12,11 +13,12 @@ export class LoginComponent {
   };
 
   constructor(private auth: AuthenticationService, private router: Router) {}
-
+ 
   login() {
     this.auth.login(this.credentials).subscribe(() => {
       this.router.navigateByUrl('/profile');
     }, (err) => {
+
       console.error(err);
     });
   }

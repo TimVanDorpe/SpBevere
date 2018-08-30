@@ -1,12 +1,19 @@
-<form (submit)="login()">
+<form (submit)="login()" #logForm="ngForm">
   <h1>Login</h1>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+  <div class="form-group" [class.has-succes]="emailVar.valid" [class.has-error]="emailVar.invalid && emailVar.touched">
+    
+    <label for="email" class="control-label">Email address</label>
+    <input required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" class="form-control" 
+    name="email" placeholder="Enter email" [(ngModel)]="credentials.email" #emailVar="ngModel" >
+    <span class="help-block" *ngIf="emailVar.invalid  && emailVar.touched" >Email is niet correct</span>
   </div>
-  <div class="form-group">
+ 
+  <div class="form-group" [class.has-succes]="passVar.valid" [class.has-error]="passVar.invalid && passVar.touched">
     <label for="password">Password</label>
-    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password" #passVar="ngModel"  required>
+  <span class="help-block" *ngIf="passVar.invalid  && passVar.touched" >Gelieve een wachtwoord in te voeren</span>
   </div>
-  <button type="submit" class="btn btn-default">Sign in!</button>
+
+  <button type="submit" [disabled]="logForm.invalid" class="btn btn-default">Sign in!</button>
 </form>
+

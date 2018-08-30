@@ -72,7 +72,7 @@ const appRoutes: Routes = [
     HomeComponent,
     ProfileComponent,
     FooterComponent,
-    RateUserComponent
+    RateUserComponent,
   ],
   imports: [
     BrowserModule,

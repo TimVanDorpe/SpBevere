@@ -68,7 +68,7 @@ public isLoggedIn(): boolean {
 public isAdmin(): boolean {
   const user = this.getUserDetails();
   if(user){
-    if (user._id == "5b753290c6c3ee349817e352") {
+    if (user._id == "5b8741cc027d181168285276") {
       return true;
     }else 
       {return false;}

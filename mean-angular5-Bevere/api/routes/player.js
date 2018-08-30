@@ -5,9 +5,9 @@ var player = require('../../models/Player.js');
 
 /* GET ALL Players */
 router.get('/', function(req, res, next) {
-  player.find(function (err, products) {
+  player.find(function (err, players) {
     if (err) return next(err);
-    res.json(products);
+    res.json(players);
   });
 });
 
@@ -21,7 +21,7 @@ router.get('/:id', function(req, res, next) {
 
 /* SAVE Player */
 router.post('/', function(req, res, next) {
-  req.body.countRatings = 1;
+ 
   player.create(req.body, function (err, post) {
     if (err) return next(err);
         res.json(post);
@@ -32,9 +32,6 @@ router.post('/', function(req, res, next) {
 router.put('/:id', function(req, res, next) {    
   player.findByIdAndUpdate(req.params.id, req.body,  function (err, post) {    
     if (err) return next(err);
-    //player.setCountRating(req.body.countRatings);
-    //player.setRating(req.body.rating);
-    
     res.json(post);
   });
 });
