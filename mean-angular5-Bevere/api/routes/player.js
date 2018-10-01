@@ -21,7 +21,7 @@ router.get('/:id', function(req, res, next) {
 
 /* SAVE Player */
 router.post('/', function(req, res, next) {
- 
+  req.body.countRatings = 1;
   player.create(req.body, function (err, post) {
     if (err) return next(err);
         res.json(post);

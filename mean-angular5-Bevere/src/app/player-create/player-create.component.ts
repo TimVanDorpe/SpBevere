@@ -26,7 +26,6 @@ export class PlayerCreateComponent implements OnInit {
   }
 
   savePlayer() {
-    
     this.http.post('/player', this.player)
       .subscribe(res => {
           let id = res['_id'];
